@@ -3,15 +3,73 @@
 <html lang="en">
 
     <head>
-        <title>Pricing Tool</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet"
+        href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
 
     </head>
     <body>
-        <nav class="nav">Pricing Tool</nav>
-        <p>Final project</p>
-    </body>
+        <header id="top_menu">
+            <div id="logo">
+                <div id="logo_text">Priceless</div>
+            </div>
+        </header>
 
+        <main class="container py-5 text-center">
+            <section class="left_menu">
+                    <div class="menu_item">
+                        <i class="ion-android-globe"></i>
+                            <span class="menu_item_text">Global Linechart</span>
+                    </div>
+                    <div class="menu_item one">
+                        <i class="ion-ios-world-outline"></i>
+                            <span>Local Linechart</span>
+                    </div>
+                    <div class="menu_item one">
+                        <i class="ion-android-apps"></i>
+                            <span>Business Area</span>
+                    </div>
+            </section>
+            <section class="pricelist">
+                <thead>
+                    <tr>
+                        <th>Article Group</th>
+                        <th>Article</th>
+                        <th>Description</th>
+                        <th>RRP</th>
+                        <th>List Price</th>
+                        <th>Discount</th>
+                        <th>Net Price</th>
+                        <th>Rebate</th>
+                        <th>Net/Net Price</th>
+                        <th>Provision</th>
+                        <th>3N Price</th>
+                        <th>T3N Price</th>
+                        <th>M3N Price</th>
+                    </tr>    
+                </thead>
+                <tbody>
+                    {% for stock in log %}
+                    <tr>
+                        <td>Article Group</td>
+                        <td>Article</td>
+                        <td>Description</td>
+                        <td>RRP</td>
+                        <td>List Price</td>
+                        <td>Discount</td>
+                        <td>Net Price</td>
+                        <td>Rebate</td>
+                        <td>Net/Net Price</td>
+                        <td>Provision</td>
+                        <td>3N Price</td>
+                        <td>T3N Price</td>
+                        <td>M3N Price</td>
+                    {% endfor %}
+                    </tr>
+                </tbody>
+            </section>
+        </main>      
+    </body>
 </html>
